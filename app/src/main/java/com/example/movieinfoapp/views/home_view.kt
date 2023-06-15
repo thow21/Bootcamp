@@ -21,24 +21,5 @@ import com.example.movieinfoapp.widgets.MovieRow
 
 @Composable
 fun HomeView(navController: NavController,movieList: List<Movie> = getMovies()) {
-    Scaffold(
-        topBar = {
-            TopAppBar(backgroundColor = Color.Transparent, elevation = 0.dp, modifier = Modifier
-                .padding(horizontal = 140.dp)
-            ) {
-                Text(text = "Movies", fontSize = 30.sp, fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center, color = Color.White
-                )
-            }
-        },
-        backgroundColor = Color.Black.copy(0.8f)
-    ) {
-        LazyColumn() {
-            items(items = movieList) {
-                MovieRow(movie = it) { movie ->
-                    navController.navigate(MovieEnum.DetailsView.name + "/$movie")
-                }
-            }
-        }
-    }
+
 }
